@@ -9,13 +9,14 @@ from discord.ext import commands
 from discord import app_commands
 
 ENV_PATH = Path(__file__).resolve().parent / ".env"
+HEROES_PATH = Path(__file__).resolve().parent / "heroes.json"
 load_dotenv(dotenv_path=ENV_PATH)
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not TOKEN or TOKEN == "PEGA_AQUI_TU_TOKEN_DE_DISCORD":
     raise ValueError("Falta DISCORD_TOKEN en el archivo .env")
 
-with open("heroes.json", "r", encoding="utf-8") as f:
+with open(HEROES_PATH, "r", encoding="utf-8") as f:
     HEROES = json.load(f)
 
 intents = discord.Intents.default()
