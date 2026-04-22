@@ -1,11 +1,24 @@
 import random
+import json
+from pathlib import Path
 from typing import Mapping
 
 import discord
 from discord import app_commands
 
 
-def build_overwatch_group(heroes: Mapping[str, list[str]]) -> app_commands.Group:
+HEROES_PATH = Path(__file__).resolve().parent / "heroes.json"
+
+
+def load_heroes(path: Path = HEROES_PATH) -> dict[str, list[str]]:
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def build_overwatch_group(heroes: Mapping[str, list[str]] | None = None) -> app_commands.Group:
+    if heroes is None:
+        heroes = load_heroes()
+
     group = app_commands.Group(name="ow", description="Comandos de Overwatch")
 
     def pick_random_hero(role: str | None = None) -> tuple[str, str]:

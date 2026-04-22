@@ -2,20 +2,24 @@
   "tank": [
     "D.Va",
     "Doomfist",
-    "Junker Queen",
-    "Mauga",
-    "Orisa",
-    "Ramattra",
-    "Reinhardt",
-    "Roadhog",
-    "Sigma",
+    "Hazard",
     "Winston",
     "Wrecking Ball",
-    "Zarya"
+    "Mauga",
+    "Orisa",
+    "Roadhog",
+    "Zarya",
+    "Domina",
+    "Junker Queen",
+    "Ramattra",
+    "Reinhardt",
+    "Sigma"
   ],
   "damage": [
-    "Ashe",
     "Bastion",
+    "Emre",
+
+    "Ashe",
     "Cassidy",
     "Echo",
     "Freja",
